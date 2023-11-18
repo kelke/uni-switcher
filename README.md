@@ -34,4 +34,5 @@ Now you can add proxy-settings to your `Automatic` network location and still ha
 ### Extras
 
 - If using an SSH-Tunnel for StudIP, the provided [.pac file](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file) can be used to only tunnel StudIP traffic
-  - https://files.kelke.de/studip.pac can be used as well, since macOS does not support local pac files anymore
+  - https://files.kelke.de/studip.pac can be used as well, since macOS does not support local pac files anymore.
+    If you do, you need a local DNS rewrite for `socks.kelke.me`for example using [Adguard Home](https://github.com/AdguardTeam/AdGuardHome)
