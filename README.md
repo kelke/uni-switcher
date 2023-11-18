@@ -10,8 +10,26 @@ The technique you choose to connect to the uni-net might require a different net
 
 ### Instructions
 
-- You need to configure a network location named `Uni`
-- As this script is meant to be ran via cronjob, an install-script is provided for an easily setup process
+1. clone this repo and note the repo path using `pwd`
+
+2. Configure a network location named `Uni`
+
+3. Run `crontab -e`
+
+4. Append the following:
+
+   ```bash
+   MAILTO=""
+   * * * * * /Users/kelke/Git/uni-switcher/uni-switcher.sh >> /Users/kelke/Git/uni-switcher/uni-switcher.log
+   ```
+
+   With `MAILTO=""` cron will not log everytime the script is ran
+
+   `* * * * *` runs the script every minute, this can, of course, be adjusted. See [crontab.guru](https://crontab.guru/#*/5_*_*_*_*) for help.
+
+5. You might have to approve a pop-up
+
+Now you can add proxy-settings to your `Automatic` network location and still have a direct connection when you are at uni.
 
 ### Extras
 
