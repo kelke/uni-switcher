@@ -15,12 +15,11 @@ while read service; do
     ip_address=$(echo "$ip_info" | awk -F': ' '/^IP address:/{print $2}')
 
     if [[ $ip_address == $check_ip* ]]; then
-        echo "$(date) --- found uni ip"
         found_uni_ip=true
 
         if [[ $(/usr/sbin/networksetup -getcurrentlocation) == "Automatic" ]]; then
-            echo "$(date) --- changing location to Uni"
-            /usr/sbin/networksetup -switchtolocation Uni
+            echo "$(date) --- found uni ip while not in uni location, changing location to: Uni"
+	    echo "$(date) --- looking for location: $(/usr/sbin/networksetup -switchtolocation Uni)"
             break
         fi
         break
