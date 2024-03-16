@@ -1,7 +1,7 @@
 function FindProxyForURL(url, host)
 {
-    if (dnsDomainIs(host, "elearning.uni-bremen.de"))
+    if (dnsDomainIs(host, "elearning.uni-bremen.de")) {
         return "SOCKS yoursshtunnelhost:port";
-    else
+    } else {
         return "DIRECT";
 }
